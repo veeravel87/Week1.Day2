@@ -6,20 +6,25 @@ public class MissingNumbersInArray {
 
 	int[] arr = { 1, 2, 3, 4, 7, 6, 8 };
 
-	public int getMissingNo() {
+	public void getMissingNo() {
 		int length = arr.length;
-		int total = (length + 1) * (length + 2) / 2;
-		for (int i = 0; i < length; i++) {
-			total = total - arr[i];
+	
+			for (int i = 1; i < length; i++) {
+			if(i!=arr[i-1])
+			{
+				System.out.println(i);
+				break;
 			}
-		return total;
+			}
+			
+		
 	}
 
 	public static void main(String args[]) {
-		// int c,d;
+	
 		MissingNumbersInArray miss = new MissingNumbersInArray();
-		int Result = miss.getMissingNo();
-		System.out.println(Result);
+		miss.getMissingNo();
+		
 
 	}
 }
